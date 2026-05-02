@@ -10,7 +10,7 @@ body {
     display: grid;
     grid-template-columns: repeat(48, 1fr);
     grid-template-rows: repeat(36, 1fr);
-    background-color: black;;
+    background-color: black;
     height: 100vh;
     width: 100vw;
 }
@@ -20,65 +20,71 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;
-    height: 100%;
     color: white;
 }
 
-#navbar {
-    display: grid;
-    grid-template-columns: repeat(48, 1fr);
-    grid-template-rows: repeat(36, 1fr);
-    border-bottom: 2px solid whitesmoke;
-    box-shadow: 1px 1px 2px 2px aquamarine;
-    height: 100%;
-    width: 100%;
-    grid-column: 1 / span 47;
-    grid-row: 1 / span 3;
-   
-}
 
 #logo {
-    grid-column: 1 / span 20;
-    grid-row: 1 / span 36;
-    font-size: 2.8rem;
+    grid-column: 1 / span 24;
+
+    grid-row: 1 / span 3;
+    font-size: 2.4rem;
     font-family: Lugrasimo;
     background: linear-gradient(135deg, hsla(35, 90%, 35%, .9), hsla(45, 70%, 77%, 0.9), hsla(183, 85%, 60%, .9), hsla(50, 65%, 59%, 0.9), hsla(26, 85%, 51%, 0.9), hsla(26, 85%, 41%, 0.9));
     -webkit-background-clip: text; /* Clips background to text */
     -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
     /* background: linear-gradient(135deg, #f32170, #ff6b08, #cf23cf, #eedd44);*/
-    
+    text-align: center;
+    border-bottom: 2px solid aquamarine;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    margin-bottom: -1.2vh;
+    filter: blur(.45px)
 
+}
+
+#logo-spacer {
+   
+    grid-column: 25 / span 24;
+    grid-row: 1 / span 3;
+    border-bottom: 2px solid aquamarine;
+    margin-bottom: -1.2vh;
 }
 
 #contact {
-    grid-column: 42 / span 6;
-    grid-row: 1 / span 36;
-    font-size: 1rem;
+    grid-column: 41 / span 8;
+    grid-row: 4 / span 2;
+   margin-top: 2vh;
     font-size: 2rem;
     font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
 }
 
 #music {
-    grid-column: 36 / span 6;
-    grid-row: 1 / span 36;
+    grid-column: 33 / span 8;
+    grid-row: 4 / span 2;
+   margin-top: 2vh;
     font-size: 2rem;
     font-family: "Fredericka the Great";
-
+    margin-top: 2.3vh;
 }
 
 #webdev {
-    grid-column: 30 / span 6;
-    grid-row: 1 / span 36;
+    grid-column: 25 / span 8;
+    grid-row: 4 / span 2;
+    margin-top: 2vh;
     font-size: 2rem;
     font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
 }
 
 #about {
-    grid-column: 24 / span 6;
-    grid-row: 1 / span 36;
+    grid-column: 17 / span 8;
+    grid-row: 4 / span 2;
     font-size: 2.3rem;
     font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
+    
 }
 
 a {
@@ -122,9 +128,6 @@ a {
 }
 
 @media screen and (max-width: 960px) {
-    #logo {
-        font-size: 2.4rem;
-    }
     #about {
         font-size: 1.9rem;
     }
@@ -155,9 +158,6 @@ a {
 }
 
 @media screen and (max-width: 850px) {
-    #logo {
-        font-size: 2.3rem;
-    }
     #about {
         font-size: 1.7rem;
     }
@@ -173,9 +173,6 @@ a {
 }
 
 @media screen and (max-width: 840px) {
-    #logo {
-        font-size: 2.2rem;
-    }
     #about {
         font-size: 1.6rem;
     }
@@ -207,16 +204,8 @@ a {
 }
 
 
-@media screen and (max-width: 783px) {
-    #logo {
-        font-size: 2.1rem;
-    }
-}
 
 @media screen and (max-width: 716px) {
-    #logo {
-        font-size: 2rem;
-    }
     #about {
         font-size: 1.4rem;
     }
@@ -231,34 +220,6 @@ a {
     }
 }
 
-@media screen and (max-width: 1070px) {
-   #about {
-    grid-column: 24 / span 6;
-   }
-   #webdev {
-    grid-column: 30 / span 6;
-   }
-   #music {
-    grid-column: 36 / span 6;
-   }
-
-   #contact {
-    grid-column: 42 / span 6;
-   }
-}
-
-@media screen and (max-width: 685px) {
-    #logo {
-        font-size: 1.9rem;
-    }
-}
-
-
-@media screen and (max-width: 682px) {
-    #logo {
-        font-size: 1.8rem;
-    }
-}
 
 @media screen and (max-width: 675px) {
     #about {
@@ -275,6 +236,13 @@ a {
     }
 }
 
+@media screen and (max-width: 649px) {
+    #logo {
+        font-size: 2.3rem;
+    }
+}
+
+
 @media screen and (max-width: 630px) {
     #about {
         font-size: 1.2rem;
@@ -290,32 +258,24 @@ a {
     }
 }
 
-@media screen and (max-width: 617px) {
+@media screen and (max-width: 625px) {
     #logo {
-        font-size: 1.7rem;
+        font-size: 2.2rem;
     }
 }
 
-@media screen and (max-width: 584px) {
+@media screen and (max-width: 596px) {
     #logo {
-        font-size: 1.6rem;
+        font-size: 2.1rem;
     }
 }
 
-
-@media screen and (max-width: 552px) {
+@media screen and (max-width: 569px) {
     #logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 }
 
-
-
-@media screen and (max-width: 522px) {
-    #logo {
-        font-size: 1.4rem;
-    }
-}
 
 @media screen and (max-width: 550px) {
     #about {
@@ -331,6 +291,19 @@ a {
         font-size: 1.1rem;
     }
 }
+
+@media screen and (max-width: 542px) {
+    #logo {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    #logo {
+        font-size: 1.8rem;
+    }
+}
+
 
 
 @media screen and (max-width: 490px) {
@@ -348,17 +321,50 @@ a {
     }
 }
 
-
-
-@media screen and (max-width: 488px) {
+@media screen and (max-width: 515px) {
     #logo {
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
 }
-    
-@media screen and (max-width: 425px) {
+
+@media screen and (max-width: 462px) {
     #logo {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 }
+
+@media screen and (max-width: 462px) {
+    #logo {
+        grid-column: 1 / span 25;
+    }
+   
+}
+
+@media screen and (max-width: 389px) {
+    #logo {
+        grid-column: 1 / span 26;
+    }
     
+}
+
+@media screen and (max-width: 374px) {
+    #logo {
+        grid-column: 1 / span 27;
+    }
+    
+}
+
+@media screen and (max-width: 363px) {
+    #logo {
+        grid-column: 1 / span 28;
+    }
+    
+}
+
+
+@media screen and (max-width: 347px) {
+    #logo {
+       font-size: 1.4rem;
+    }
+    
+}
