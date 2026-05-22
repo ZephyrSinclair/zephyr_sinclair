@@ -1,0 +1,387 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    background-color: black;
+    height: 98vh;
+    width: 100vw;
+}
+
+.grid-center-border-width-height {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+
+#logo {
+    grid-column: 2 / span 25;
+    border-bottom: 2px solid whitesmoke;
+    grid-row: 1 / span 3;
+    font-size: 2.4rem;
+    font-family: Lugrasimo;
+    background: linear-gradient(135deg, hsla(35, 90%, 35%, .9), hsla(45, 70%, 77%, 0.9), hsla(183, 85%, 60%, .9), hsla(50, 65%, 59%, 0.9), hsla(26, 85%, 51%, 0.9), hsla(26, 85%, 41%, 0.9));
+    background-clip: text;
+    -webkit-background-clip: text; /* Clips background to text */
+    -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
+    /* background: linear-gradient(135deg, #f32170, #ff6b08, #cf23cf, #eedd44);*/
+    text-align: center;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    margin-bottom: -.7vh;
+    filter: blur(.45px);
+    box-shadow: 4px 4px 4px aquamarine;
+
+}
+
+#logo-spacer {
+    grid-column: 25 / span 24;
+    grid-row: 1 / span 3;
+}
+
+#contact {
+    grid-column: 40 / span 9;
+    grid-row: 5 / span 3;
+   margin-top: 2vh;
+   border: 2px solid whitesmoke;
+    font-size: 2rem;
+    font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
+}
+
+#music {
+    grid-column: 31 / span 9;
+    grid-row: 5 / span 3;
+    border: 2px solid whitesmoke;
+   margin-top: 2vh;
+    font-size: 2rem;
+    font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
+}
+
+#webdev {
+    grid-column: 22 / span 9;
+    grid-row: 5 / span 3;
+    margin-top: 2vh;
+    border: 2px solid whitesmoke;
+    font-size: 2rem;
+    font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
+}
+
+#about {
+    grid-column: 13 / span 9;
+    grid-row: 5 / span 3;
+    font-size: 2.3rem;
+    font-family: "Fredericka the Great";
+    margin-top: 2.3vh;
+    border: 2px solid whitesmoke
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ### Coding - Content ###  */
+
+#coding-projects {
+    color: white;
+    grid-column: 6 / span 38;
+    grid-row: 16 / span 3;
+    text-align: center;
+    font-family: "Fredericka the Great";
+    font-size: 2rem;
+}
+
+#canvas-animation {
+    color: white;
+    font-size: 1.8rem;
+    border: 2px solid white;
+    grid-column: 10 / span 18;
+    grid-row: 19 / span 3;
+}
+
+#footer {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    color: whitesmoke;
+    grid-column: 1 / span 48;
+    grid-row: 34 / span 3;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
+}
+
+#facebook {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-left: 2px solid whitesmoke;
+    grid-column: 43 / span 5;
+    grid-row: 1 / span 36;
+}
+
+#youtube {
+    border-left: 2px solid white;
+    grid-column: 38 / span 5;
+    grid-row: 1 / span 36;
+}
+
+#instagram {
+    border-left: 2px solid white;
+    grid-column: 33 / span 5;
+    grid-row: 1 / span 36;
+}
+
+#tiktok {
+    border-left: 2px solid white;
+    grid-column: 28 / span 5;
+    grid-row: 1 / span 36
+}
+
+@media screen and (max-width: 960px) {
+    #about {
+        font-size: 1.9rem;
+    }
+    #webdev {
+        font-size: 1.9rem;
+    }
+    #music {
+        font-size: 1.9rem;
+    }
+    #contact {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    #about {
+        font-size: 1.8rem;
+    }
+    #webdev {
+        font-size: 1.8rem;
+    }
+    #music {
+        font-size: 1.8rem;
+    }
+    #contact {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #about {
+        font-size: 1.7rem;
+    }
+    #webdev {
+        font-size: 1.7rem;
+    }
+    #music {
+        font-size: 1.7rem;
+    }
+    #contact {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    #about {
+        font-size: 1.6rem;
+    }
+    #webdev {
+        font-size: 1.6rem;
+    }
+    #music {
+        font-size: 1.6rem;
+    }
+    #contact {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    #about {
+        font-size: 1.5rem;
+    }
+    #webdev {
+        font-size: 1.5rem;
+    }
+    #music {
+        font-size: 1.5rem;
+    }
+    #contact {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 716px) {
+    #about {
+        font-size: 1.4rem;
+    }
+    #webdev {
+        font-size: 1.4rem;
+    }
+    #music {
+        font-size: 1.4rem;
+    }
+    #contact {
+        font-size: 1.4rem;
+    }
+}
+
+
+@media screen and (max-width: 675px) {
+    #about {
+        font-size: 1.3rem;
+    }
+    #webdev {
+        font-size: 1.3rem;
+    }
+    #music {
+        font-size: 1.3rem;
+    }
+    #contact {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 649px) {
+    #logo {
+        font-size: 2.3rem;
+    }
+}
+
+
+@media screen and (max-width: 630px) {
+    #about {
+        font-size: 1.2rem;
+    }
+    #webdev {
+        font-size: 1.2rem;
+    }
+    #music {
+        font-size: 1.2rem;
+    }
+    #contact {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    #logo {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 596px) {
+    #logo {
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    #logo {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    #about {
+        font-size: 1.1rem;
+    }
+    #webdev {
+        font-size: 1.1rem;
+    }
+    #music {
+        font-size: 1.1rem;
+    }
+    #contact {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+@media screen and (max-width: 515px) {
+    #logo {
+        font-size: 1.9rem;
+    }
+}
+
+
+
+@media screen and (max-width: 490px) {
+    #about {
+        font-size: 1rem;
+    }
+    #webdev {
+        font-size: 1rem;
+    }
+    #music {
+        font-size: 1rem;
+    }
+    #contact {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    #logo {
+        font-size: 1.7rem;
+    }
+}
+
+
+@media screen and (max-width: 462px) {
+    #logo {
+        grid-column: 1 / span 25;
+    }
+   
+}
+
+@media screen and (max-width: 389px) {
+    #logo {
+        grid-column: 1 / span 26;
+    }
+    
+}
+
+@media screen and (max-width: 374px) {
+    #logo {
+        grid-column: 1 / span 27;
+    }
+    
+}
+
+@media screen and (max-width: 363px) {
+    #logo {
+        grid-column: 1 / span 28;
+    }
+    
+}
+
+
+@media screen and (max-width: 347px) {
+    #logo {
+       font-size: 1.4rem;
+    }
+    
+}
+
