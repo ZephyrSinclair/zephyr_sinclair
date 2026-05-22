@@ -1,0 +1,130 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    background-color: black;;
+    height: 100vh;
+    width: 100vw;
+}
+
+.grid-center-border-width-height {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    border: 2px solid whitesmoke;
+    height: 100%;
+    width: 100%;
+    grid-column: 1 / span 47;
+    grid-row: 1 / span 3;
+   
+}
+
+#logo {
+    grid-column: 1 / span 15;
+    grid-row: 1 / span 36;
+    border-right: 2px solid whitesmoke;
+    font-size: 1.7rem;
+    font-family: Lugrasimo;
+    background: linear-gradient(135deg, hsla(35, 60%, 95%, .9), hsla(183, 70%, 87%, 0.9), hsla(183, 75%, 80%, .9), hsla(50, 65%, 59%, 0.9), hsla(26, 85%, 51%, 0.9), hsla(26, 85%, 41%, 0.9));
+    -webkit-background-clip: text; /* Clips background to text */
+    -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
+    /* background: linear-gradient(135deg, #f32170, #ff6b08, #cf23cf, #eedd44);*/
+
+}
+
+#contact {
+    grid-column: 40 / span 9;
+    grid-row: 1 / span 36;
+    font-size: 1rem;
+    
+    border: 2px solid whitesmoke;
+    font-size: 1.5rem;
+}
+
+#music {
+    grid-column: 32 / span 8;
+    grid-row: 1 / span 36;
+    border: 2px solid whitesmoke;
+    font-size: 1.5rem;
+
+}
+
+#webdev {
+    grid-column: 24 / span 8;
+    grid-row: 1 / span 36;
+    border-left: 2px solid whitesmoke;
+    font-size: 1.5rem;
+}
+
+#about {
+    grid-column: 16 / span 8;
+    grid-row: 1 / span 36;
+    border: 2px solid whitesmoke;
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ### About ###   */
+
+p1 {
+    color: white;
+    grid-row: 16 / span 3;;
+}
+
+
+#footer {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    grid-column: 1 / span 48;
+    grid-row: 34 / span 3;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
+}
+
+#facebook {
+    border-left: 2px solid whitesmoke;
+    grid-column: 44 / span 4;
+    grid-row: 1 / span 36
+}
+
+#youtube {
+    border-left: 2px solid white;
+    grid-column: 40 / span 4;
+    grid-row: 1 / span 36;
+}
+
+#instagram {
+    border-left: 2px solid white;
+    grid-column: 36 / span 4;
+    grid-row: 1 / span 36;
+}
+
+#tiktok {
+    border-left: 2px solid white;
+    grid-column: 32 / span 4;
+    grid-row: 1 / span 36
+}
