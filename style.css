@@ -25,10 +25,10 @@ body {
 
 
 #logo {
-    grid-column: 2 / span 25;
+    grid-column: 2 / span 20;
     border-bottom: 2px solid whitesmoke;
-    grid-row: 1 / span 3;
-    font-size: 2.4rem;
+    grid-row: 1 / span 4;
+    font-size: 3rem;
     font-family: Lugrasimo;
     background: linear-gradient(135deg, hsla(35, 90%, 35%, .9), hsla(45, 70%, 77%, 0.9), hsla(183, 85%, 60%, .9), hsla(50, 65%, 59%, 0.9), hsla(26, 85%, 51%, 0.9), hsla(26, 85%, 41%, 0.9));
     -webkit-background-clip: text; /* Clips background to text */
@@ -43,46 +43,44 @@ body {
 
 }
 
-#logo-spacer {
-    grid-column: 25 / span 24;
-    grid-row: 1 / span 3;
-}
+
+/* ### Banner Links ### */
 
 #contact {
-    grid-column: 40 / span 9;
-    grid-row: 5 / span 3;
+    grid-column: 41 / span 8;
+    grid-row: 4 / span 3;
    margin-top: 2vh;
    border: 2px solid whitesmoke;
     font-size: 2rem;
-    font-family: "Fredericka the Great";
+    font-family: "Fjalla One";
     margin-top: 2.3vh;
 }
 
 #music {
-    grid-column: 31 / span 9;
-    grid-row: 5 / span 3;
+    grid-column: 41/ span 8;
+    grid-row: 1 / span 3;
     border: 2px solid whitesmoke;
    margin-top: 2vh;
     font-size: 2rem;
-    font-family: "Fredericka the Great";
+    font-family: "Fjalla One";
     margin-top: 2.3vh;
 }
 
 #webdev {
-    grid-column: 22 / span 9;
-    grid-row: 5 / span 3;
+    grid-column: 33 / span 8;
+    grid-row: 1 / span 3;
     margin-top: 2vh;
     border: 2px solid whitesmoke;
     font-size: 2rem;
-    font-family: "Fredericka the Great";
+    font-family: "Fjalla One";
     margin-top: 2.3vh;
 }
 
 #about {
-    grid-column: 13 / span 9;
-    grid-row: 5 / span 3;
-    font-size: 2.3rem;
-    font-family: "Fredericka the Great";
+    grid-column: 25 / span 8;
+    grid-row: 1 / span 3;
+    font-size: 2rem;
+    font-family: "Fjalla One";
     margin-top: 2.3vh;
     border: 2px solid whitesmoke
     
@@ -93,7 +91,40 @@ a {
     color: white;
 }
 
-#footer {
+/* ### Introduction Area ###  */
+
+
+
+#introduction-text-one {
+    color: aliceblue;
+    grid-row: 12 / span 3;
+    font-family: "Fjalla One";
+    grid-column: 6 / span 40;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#introduction-text-two {
+    color: aliceblue;
+
+    grid-row: 20 / span 6;
+    height: 100%;
+    width: 100%;
+    grid-column: 6 / span 40;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Fjalla One";
+    font-size: 2rem;
+}
+
+footer {
     display: grid;
     grid-template-columns: repeat(48, 1fr);
     grid-template-rows: repeat(36, 1fr);
@@ -131,6 +162,142 @@ a {
     grid-column: 28 / span 5;
     grid-row: 1 / span 36
 }
+
+@media screen and (max-width: 1037px) {
+    #logo {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    #logo {
+        font-size: 2.7rem;
+    }
+}
+
+@media screen and (max-width: 919px) {
+    #logo {
+        font-size: 2.6rem;
+    }
+}
+
+@media screen and (max-width: 888px) {
+    #logo {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    #logo {
+        font-size: 2.4rem;
+    }
+}
+
+
+@media screen and (max-width: 823px) {
+    #logo {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 823px) {
+    #logo {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (max-width: 789px) {
+    #logo {
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (max-width: 787px) {
+    #logo {
+        grid-row: 1 / span 3;
+        
+    }
+}
+
+@media screen and (max-width: 723px) {
+    #logo {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 677px) {
+    #logo {
+        font-size: 1.9rem;
+    }
+}
+
+
+
+@media screen and (max-width: 677px) {
+    #logo {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #logo {
+        font-size: 1.7rem;
+    }
+    #introduction-text-one {
+        font-size: 2.3rem
+    }
+    #introduction-text-two {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 587px) {
+    #logo {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 587px) {
+    #logo {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 525px) {
+    #logo {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 515px) {
+    #logo {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    #logo {
+        grid-row: 1 / span 2;
+    }
+}
+
+@media screen and (max-width: 473px) {
+    #logo {
+        font-size: 1.3rem;
+    }
+}
+
+
+@media screen and (max-width: 473px) {
+    #logo {
+        font-size: 1.2rem;
+    }
+}
+
 
 @media screen and (max-width: 960px) {
     #about {
@@ -241,11 +408,7 @@ a {
     }
 }
 
-@media screen and (max-width: 649px) {
-    #logo {
-        font-size: 2.3rem;
-    }
-}
+
 
 
 @media screen and (max-width: 630px) {
@@ -263,23 +426,9 @@ a {
     }
 }
 
-@media screen and (max-width: 625px) {
-    #logo {
-        font-size: 2.2rem;
-    }
-}
 
-@media screen and (max-width: 596px) {
-    #logo {
-        font-size: 2.1rem;
-    }
-}
 
-@media screen and (max-width: 569px) {
-    #logo {
-        font-size: 2rem;
-    }
-}
+
 
 
 @media screen and (max-width: 550px) {
@@ -299,11 +448,6 @@ a {
 
 
 
-@media screen and (max-width: 515px) {
-    #logo {
-        font-size: 1.9rem;
-    }
-}
 
 
 
@@ -322,45 +466,4 @@ a {
     }
 }
 
-@media screen and (max-width: 515px) {
-    #logo {
-        font-size: 1.7rem;
-    }
-}
 
-
-@media screen and (max-width: 462px) {
-    #logo {
-        grid-column: 1 / span 25;
-    }
-   
-}
-
-@media screen and (max-width: 389px) {
-    #logo {
-        grid-column: 1 / span 26;
-    }
-    
-}
-
-@media screen and (max-width: 374px) {
-    #logo {
-        grid-column: 1 / span 27;
-    }
-    
-}
-
-@media screen and (max-width: 363px) {
-    #logo {
-        grid-column: 1 / span 28;
-    }
-    
-}
-
-
-@media screen and (max-width: 347px) {
-    #logo {
-       font-size: 1.4rem;
-    }
-    
-}
