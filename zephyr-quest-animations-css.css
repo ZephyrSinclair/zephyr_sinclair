@@ -1,0 +1,350 @@
+html {
+    background-color: black;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    height: 100vh;
+    width: 100vw;
+}
+
+#animation-box {
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    border: 2px solid aliceblue;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    grid-column: 6 / span 38;
+    grid-row: 20 / span 4;
+}
+
+#cast-frostbolt {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+    grid-row: 16 / span 2;
+    grid-column: 6 / span 10;
+}
+
+#cast-fireball {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: hsl(25, 85%, 60%);
+    color: hsl(10, 100%, 8%);
+    grid-row: 16 / span 2;
+    grid-column: 18 / span 10;
+}
+
+
+#frostbolt {
+    --cast-duration: 1.3s;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transform: translate(0, -50%) scaleX(-1);
+    transform-origin: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#frostbolt.is-casting {
+    opacity: 1;
+    animation: frostbolt-cast var(--cast-duration) linear forwards;
+}
+
+@keyframes frostbolt-cast {
+    from {
+        transform: translate(0, -50%) scaleX(-1);
+    }
+    to {
+        transform: translate(var(--travel-x, 0px), -50%) scaleX(-1);
+    }
+}
+
+.spell-tile {
+    
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+
+#frostbolt.is-casting .spell-tile {
+    animation-name: tile-on;
+    animation-duration: 1ms;
+    animation-delay: calc(var(--cast-duration) * var(--tile-at, 0));
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1, end);
+}
+
+@keyframes tile-on {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: var(--tile-color, transparent);
+    }
+}
+
+
+
+/* Chess-style grid mapping: a1 is bottom-left, h8 is top-right. */
+#a1 { grid-column: 1; grid-row: 8; }
+#a2 { grid-column: 1; grid-row: 7; }
+#a3 { grid-column: 1; grid-row: 6; }
+#a4 { grid-column: 1; grid-row: 5; }
+#a5 { grid-column: 1; grid-row: 4; }
+#a6 { grid-column: 1; grid-row: 3; }
+#a7 { grid-column: 1; grid-row: 2; }
+#a8 { grid-column: 1; grid-row: 1; }
+
+#b1 { grid-column: 2; grid-row: 8; }
+#b2 { grid-column: 2; grid-row: 7; }
+#b3 { grid-column: 2; grid-row: 6; }
+#b4 { grid-column: 2; grid-row: 5; }
+#b5 { grid-column: 2; grid-row: 4; }
+#b6 { grid-column: 2; grid-row: 3; }
+#b7 { grid-column: 2; grid-row: 2; }
+#b8 { grid-column: 2; grid-row: 1; }
+
+#c1 { grid-column: 3; grid-row: 8; }
+#c2 { grid-column: 3; grid-row: 7; }
+#c3 { grid-column: 3; grid-row: 6; }
+#c4 { grid-column: 3; grid-row: 5; }
+#c5 { grid-column: 3; grid-row: 4; }
+#c6 { grid-column: 3; grid-row: 3; }
+#c7 { grid-column: 3; grid-row: 2; }
+#c8 { grid-column: 3; grid-row: 1; }
+
+#d1 { grid-column: 4; grid-row: 8; }
+#d2 { grid-column: 4; grid-row: 7; }
+#d3 { grid-column: 4; grid-row: 6; }
+#d4 { grid-column: 4; grid-row: 5; }
+#d5 { grid-column: 4; grid-row: 4; }
+#d6 { grid-column: 4; grid-row: 3; }
+#d7 { grid-column: 4; grid-row: 2; }
+#d8 { grid-column: 4; grid-row: 1; }
+
+#e1 { grid-column: 5; grid-row: 8; }
+#e2 { grid-column: 5; grid-row: 7; }
+#e3 { grid-column: 5; grid-row: 6; }
+#e4 { grid-column: 5; grid-row: 5; }
+#e5 { grid-column: 5; grid-row: 4; }
+#e6 { grid-column: 5; grid-row: 3; }
+#e7 { grid-column: 5; grid-row: 2; }
+#e8 { grid-column: 5; grid-row: 1; }
+
+#f1 { grid-column: 6; grid-row: 8; }
+#f2 { grid-column: 6; grid-row: 7; }
+#f3 { grid-column: 6; grid-row: 6; }
+#f4 { grid-column: 6; grid-row: 5; }
+#f5 { grid-column: 6; grid-row: 4; }
+#f6 { grid-column: 6; grid-row: 3; }
+#f7 { grid-column: 6; grid-row: 2; }
+#f8 { grid-column: 6; grid-row: 1; }
+
+#g1 { grid-column: 7; grid-row: 8; }
+#g2 { grid-column: 7; grid-row: 7; }
+#g3 { grid-column: 7; grid-row: 6; }
+#g4 { grid-column: 7; grid-row: 5; }
+#g5 { grid-column: 7; grid-row: 4; }
+#g6 { grid-column: 7; grid-row: 3; }
+#g7 { grid-column: 7; grid-row: 2; }
+#g8 { grid-column: 7; grid-row: 1; }
+
+#h1 { grid-column: 8; grid-row: 8; }
+#h2 { grid-column: 8; grid-row: 7; }
+#h3 { grid-column: 8; grid-row: 6; }
+#h4 { grid-column: 8; grid-row: 5; }
+#h5 { grid-column: 8; grid-row: 4; }
+#h6 { grid-column: 8; grid-row: 3; }
+#h7 { grid-column: 8; grid-row: 2; }
+#h8 { grid-column: 8; grid-row: 1; }
+
+/*
+Tile timeline controls:
+- --tile-at: reveal percentage as 0.00..1.00 of cast duration
+- --tile-color: color to apply at reveal time
+Example: 10% of 1.5s = 0.15s -> --tile-at: 0.10
+*/
+
+/* Phase 1: cold spark forms near center (4% to 14%). */
+#f4 { --tile-color: hsla(194, 100%, 86%, 0.98); --tile-at: 0.04; }
+#f3 { --tile-color: hsla(196, 100%, 81%, 0.90); --tile-at: 0.07; }
+#f5 { --tile-color: hsla(196, 100%, 81%, 0.90); --tile-at: 0.07; }
+#e4 { --tile-color: hsla(202, 84%, 62%, 0.70); --tile-at: 0.10; }
+#g4 { --tile-color: hsla(195, 96%, 76%, 0.96); --tile-at: 0.12; }
+#g3 { --tile-color: hsla(199, 88%, 70%, 0.84); --tile-at: 0.14; }
+
+/* Phase 2: body thickens and icy aura trails (18% to 42%). */
+#e3 { --tile-color: hsla(204, 80%, 58%, 0.56); --tile-at: 0.18; }
+#e5 { --tile-color: hsla(204, 80%, 58%, 0.56); --tile-at: 0.20; }
+#d4 { --tile-color: hsla(208, 70%, 50%, 0.45); --tile-at: 0.24; }
+#g5 { --tile-color: hsla(198, 90%, 68%, 0.85); --tile-at: 0.26; }
+#h4 { --tile-color: hsla(190, 100%, 82%, 1); --tile-at: 0.30; }
+#h3 { --tile-color: hsla(194, 94%, 72%, 0.83); --tile-at: 0.33; }
+#h5 { --tile-color: hsla(194, 94%, 72%, 0.83); --tile-at: 0.33; }
+#d3 { --tile-color: hsla(210, 67%, 48%, 0.40); --tile-at: 0.36; }
+#d5 { --tile-color: hsla(210, 67%, 48%, 0.40); --tile-at: 0.38; }
+#c4 { --tile-color: hsla(215, 60%, 44%, 0.32); --tile-at: 0.42; }
+
+/* Phase 3: tip flare and crystalline edge (48% to 82%). */
+#h2 { --tile-color: hsla(198, 100%, 76%, 0.60); --tile-at: 0.48; }
+#h6 { --tile-color: hsla(198, 100%, 76%, 0.60); --tile-at: 0.48; }
+#g2 { --tile-color: hsla(201, 90%, 63%, 0.44); --tile-at: 0.54; }
+#g6 { --tile-color: hsla(201, 90%, 63%, 0.44); --tile-at: 0.54; }
+#f2 { --tile-color: hsla(205, 82%, 56%, 0.36); --tile-at: 0.61; }
+#f6 { --tile-color: hsla(205, 82%, 56%, 0.36); --tile-at: 0.61; }
+#h1 { --tile-color: hsla(192, 100%, 82%, 0.55); --tile-at: 0.68; }
+#h7 { --tile-color: hsla(192, 100%, 82%, 0.55); --tile-at: 0.68; }
+#g1 { --tile-color: hsla(203, 86%, 60%, 0.34); --tile-at: 0.74; }
+#g7 { --tile-color: hsla(203, 86%, 60%, 0.34); --tile-at: 0.74; }
+#h8 { --tile-color: hsla(196, 100%, 80%, 0.50); --tile-at: 0.82; }
+
+/* Phase 4: axis coverage sweep uses all files (a-h) and all ranks (1-8). */
+#a1 { --tile-color: hsla(210, 70%, 48%, 0.30); --tile-at: 0.86; }
+#b2 { --tile-color: hsla(207, 76%, 55%, 0.38); --tile-at: 0.875; }
+#c3 { --tile-color: hsla(204, 82%, 62%, 0.48); --tile-at: 0.89; }
+#d4 { --tile-color: hsla(201, 88%, 70%, 0.62); --tile-at: 0.905; }
+#e5 { --tile-color: hsla(198, 94%, 78%, 0.74); --tile-at: 0.92; }
+#f6 { --tile-color: hsla(195, 98%, 82%, 0.82); --tile-at: 0.935; }
+#g7 { --tile-color: hsla(192, 100%, 86%, 0.90); --tile-at: 0.95; }
+#h8 { --tile-color: hsla(188, 100%, 90%, 0.98); --tile-at: 0.965; }
+
+#fireball {
+    --cast-duration: 2.2s;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transform: translate(0, -50%) scale(0.55);
+    transform-origin: center;
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 0 8px hsla(18, 100%, 58%, 0.7));
+}
+
+#fireball.is-casting {
+    opacity: 1;
+    animation: fireball-cast var(--cast-duration) linear forwards;
+}
+
+@keyframes fireball-cast {
+    from {
+        transform: translate(0, -50%) scale(0.55);
+    }
+    to {
+        transform: translate(var(--travel-x, 0px), -50%) scale(1.18);
+    }
+}
+
+#fireball .spell-tile {
+   
+}
+
+#fireball.is-casting .spell-tile {
+    animation-name: fire-tile-on;
+    animation-duration: 1ms;
+    animation-delay: calc(var(--cast-duration) * var(--fire-at, 0));
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1, end);
+}
+
+@keyframes fire-tile-on {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: var(--fire-color, transparent);
+    }
+}
+
+/* Fireball: centered circular expansion with dense fill. */
+/* Phase 1: white-hot core (6% to 18%). */
+#fb-d4 { --fire-color: hsla(52, 100%, 98%, 1); --fire-at: 0.06; }
+#fb-e4 { --fire-color: hsla(50, 100%, 96%, 1); --fire-at: 0.08; }
+#fb-d5 { --fire-color: hsla(46, 100%, 92%, 0.98); --fire-at: 0.12; }
+#fb-e5 { --fire-color: hsla(44, 100%, 88%, 0.96); --fire-at: 0.18; }
+
+/* Phase 2: inner ring (20% to 44%). */
+#fb-c4 { --fire-color: hsla(36, 100%, 78%, 0.90); --fire-at: 0.20; }
+#fb-f4 { --fire-color: hsla(34, 100%, 76%, 0.90); --fire-at: 0.22; }
+#fb-c5 { --fire-color: hsla(34, 100%, 76%, 0.90); --fire-at: 0.24; }
+#fb-f5 { --fire-color: hsla(32, 100%, 74%, 0.90); --fire-at: 0.26; }
+
+#fb-d3 { --fire-color: hsla(28, 100%, 70%, 0.84); --fire-at: 0.30; }
+#fb-e3 { --fire-color: hsla(28, 100%, 70%, 0.84); --fire-at: 0.30; }
+#fb-d6 { --fire-color: hsla(26, 100%, 68%, 0.84); --fire-at: 0.34; }
+#fb-e6 { --fire-color: hsla(26, 100%, 68%, 0.84); --fire-at: 0.34; }
+
+#fb-c3 { --fire-color: hsla(20, 100%, 62%, 0.78); --fire-at: 0.38; }
+#fb-f3 { --fire-color: hsla(20, 100%, 62%, 0.78); --fire-at: 0.40; }
+#fb-c6 { --fire-color: hsla(18, 98%, 58%, 0.78); --fire-at: 0.42; }
+#fb-f6 { --fire-color: hsla(18, 98%, 58%, 0.78); --fire-at: 0.44; }
+
+/* Phase 3: mid ring and body fill (46% to 72%). */
+#fb-b4 { --fire-color: hsla(18, 96%, 56%, 0.74); --fire-at: 0.46; }
+#fb-g4 { --fire-color: hsla(18, 96%, 56%, 0.74); --fire-at: 0.48; }
+#fb-b5 { --fire-color: hsla(18, 96%, 56%, 0.74); --fire-at: 0.50; }
+#fb-g5 { --fire-color: hsla(18, 96%, 56%, 0.74); --fire-at: 0.52; }
+
+#fb-c2 { --fire-color: hsla(14, 92%, 52%, 0.68); --fire-at: 0.54; }
+#fb-f2 { --fire-color: hsla(14, 92%, 52%, 0.68); --fire-at: 0.54; }
+#fb-c7 { --fire-color: hsla(14, 92%, 52%, 0.68); --fire-at: 0.58; }
+#fb-f7 { --fire-color: hsla(14, 92%, 52%, 0.68); --fire-at: 0.58; }
+
+#fb-d2 { --fire-color: hsla(12, 90%, 48%, 0.64); --fire-at: 0.60; }
+#fb-e2 { --fire-color: hsla(12, 90%, 48%, 0.64); --fire-at: 0.60; }
+#fb-d7 { --fire-color: hsla(12, 90%, 48%, 0.64); --fire-at: 0.64; }
+#fb-e7 { --fire-color: hsla(12, 90%, 48%, 0.64); --fire-at: 0.64; }
+
+#fb-b3 { --fire-color: hsla(10, 86%, 46%, 0.58); --fire-at: 0.66; }
+#fb-g3 { --fire-color: hsla(10, 86%, 46%, 0.58); --fire-at: 0.68; }
+#fb-b6 { --fire-color: hsla(10, 86%, 46%, 0.58); --fire-at: 0.70; }
+#fb-g6 { --fire-color: hsla(10, 86%, 46%, 0.58); --fire-at: 0.72; }
+
+/* Phase 4: outer circular halo and ember fringe (74% to 100%). */
+#fb-a4 { --fire-color: hsla(8, 82%, 42%, 0.50); --fire-at: 0.74; }
+#fb-h4 { --fire-color: hsla(8, 82%, 42%, 0.50); --fire-at: 0.76; }
+#fb-a5 { --fire-color: hsla(8, 82%, 42%, 0.50); --fire-at: 0.78; }
+#fb-h5 { --fire-color: hsla(8, 82%, 42%, 0.50); --fire-at: 0.80; }
+
+#fb-b2 { --fire-color: hsla(8, 78%, 38%, 0.42); --fire-at: 0.82; }
+#fb-g2 { --fire-color: hsla(8, 78%, 38%, 0.42); --fire-at: 0.84; }
+#fb-b7 { --fire-color: hsla(8, 78%, 38%, 0.42); --fire-at: 0.84; }
+#fb-g7 { --fire-color: hsla(8, 78%, 38%, 0.42); --fire-at: 0.86; }
+
+#fb-c1 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.88; }
+#fb-d1 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.90; }
+#fb-e1 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.90; }
+#fb-f1 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.92; }
+
+#fb-c8 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.92; }
+#fb-d8 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.94; }
+#fb-e8 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.94; }
+#fb-f8 { --fire-color: hsla(7, 74%, 36%, 0.36); --fire-at: 0.96; }
+
+#fb-a3 { --fire-color: hsla(6, 68%, 30%, 0.28); --fire-at: 0.96; }
+#fb-h3 { --fire-color: hsla(6, 68%, 30%, 0.28); --fire-at: 0.97; }
+#fb-a6 { --fire-color: hsla(6, 68%, 30%, 0.28); --fire-at: 0.98; }
+#fb-h6 { --fire-color: hsla(6, 68%, 30%, 0.28); --fire-at: 0.99; }
+
