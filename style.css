@@ -25,22 +25,57 @@ body {
 
 
 #logo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     grid-column: 2 / span 20;
     border-bottom: 2px solid whitesmoke;
     grid-row: 1 / span 4;
     font-size: 3rem;
     font-family: Lugrasimo;
-    background: linear-gradient(135deg, hsla(35, 90%, 35%, .9), hsla(45, 70%, 77%, 0.9), hsla(183, 85%, 60%, .9), hsla(50, 65%, 59%, 0.9), hsla(26, 85%, 51%, 0.9), hsla(26, 85%, 41%, 0.9));
-    -webkit-background-clip: text; /* Clips background to text */
-    -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
+    background: transparent;
     /* background: linear-gradient(135deg, #f32170, #ff6b08, #cf23cf, #eedd44);*/
     text-align: center;
-    margin-top: 2vh;
+    margin-top: 4vh;
     margin-left: 1vw;
     margin-bottom: -.7vh;
     filter: blur(.45px);
     box-shadow: 4px 4px 4px aquamarine;
 
+}
+
+#logo-text {
+    display: inline-block;
+    background: linear-gradient(135deg, hsla(35, 90%, 35%, .9), hsla(45, 70%, 77%, 0.9), hsla(183, 85%, 60%, .9), hsla(50, 65%, 59%, 0.9), hsla(26, 85%, 51%, 0.9), hsla(26, 85%, 41%, 0.9));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: logoTextPhase 5s ease-in-out infinite, logoGlowPulse 5s ease-in-out infinite;
+}
+
+@keyframes logoTextPhase {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes logoGlowPulse {
+    0% {
+        text-shadow: 0 0 0 rgba(127, 255, 212, 0);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(127, 255, 212, 0.45), 0 0 22px rgba(255, 248, 220, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 0 rgba(127, 255, 212, 0);
+    }
 }
 
 
@@ -212,12 +247,6 @@ footer {
     }
 }
 
-@media screen and (max-width: 787px) {
-    #logo {
-        grid-row: 1 / span 3;
-        
-    }
-}
 
 @media screen and (max-width: 723px) {
     #logo {
@@ -258,11 +287,6 @@ footer {
     }
 }
 
-@media screen and (max-width: 587px) {
-    #logo {
-        font-size: 1.5rem;
-    }
-}
 
 
 @media screen and (max-width: 525px) {
@@ -279,24 +303,12 @@ footer {
     }
 }
 
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 515px) {
     #logo {
-        grid-row: 1 / span 2;
+        font-size: 1.4rem;
     }
 }
 
-@media screen and (max-width: 473px) {
-    #logo {
-        font-size: 1.3rem;
-    }
-}
-
-
-@media screen and (max-width: 473px) {
-    #logo {
-        font-size: 1.2rem;
-    }
-}
 
 
 @media screen and (max-width: 960px) {
